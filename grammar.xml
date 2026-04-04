@@ -49,7 +49,7 @@ See tagset.txt for the different POS, Lexical Categories, and corresponding attr
 			</pattern>
 
 			<message> Ang ibig sabihin mo ba ay
-				<suggestion><match no="1" case_conversion="startlower" regexp_match="(.)(a|o)(.*)" regexp_replace="$1$2 $3"/></suggestion>? Walang salitang <suggestion><match no="1"/></suggestion>', at ito ay madalas dalawang salitang pinagsasama.
+				<suggestion><match no="1" case_conversion="startlower" regexp_match="(.)(a|o)(.*)" regexp_replace="$1$2 $3"/></suggestion>? Walang salitang '<match no="1"/>'.
 			</message>
 			<short>Two Words Merged into One Change</short>
 			<example correction="pa rin" type="incorrect">Nandito ka <marker>palang</marker></example>
