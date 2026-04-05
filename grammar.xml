@@ -55,5 +55,71 @@ See tagset.txt for the different POS, Lexical Categories, and corresponding attr
 			<example correction="pa rin" type="incorrect">Nandito ka <marker>palang</marker></example>
 			<example type="correct">Nandito ka <marker>pa lang</marker></example>
 		</rule>
+		
+	</category>
+		<category id="VowelReduction" name="'oo' being turned to 'o' or 'u'">
+		<rule id="GANON" name="ganon to ganoon">
+			<pattern>
+			<token regexp="yes">\bganon|ganun\b</token>
+			</pattern>
+			<message>Ang ibig sabihin mo ba ay 'ganoon'? Walang salitang '<match no="1"/>'</message>
+			<suggestion>ganoon</suggestion>
+		</rule>
+
+		<rule id="DON" name="don to doon">
+			<pattern>
+			<token regexp="yes">\bdon|dun\b</token>
+			</pattern>
+			<message>Ang ibig sabihin mo ba ay 'doon'? Walang salitang '<match no="1"/>'</message>
+			<suggestion>doon</suggestion>
+		</rule>
+
+		<rule id="NON" name="non to noon">
+			<pattern>
+			<token regexp="yes">\bnon|nun\b</token>
+			</pattern>
+			<message>Ang ibig sabihin mo ba ay 'noon'? Walang salitang '<match no="1"/>'</message>
+			<suggestion>noon</suggestion>
+		</rule>
+
+		<rule id="NANDOON" name="andon to nandoon">
+			<pattern>
+			<token regexp="yes">\bandon|andun|nandon|nandun\b</token>
+			</pattern>
+			<message>Ang ibig sabihin mo ba ay 'nandoon'? Walang salitang '<match no="1"/>'</message>
+			<suggestion>nandoon</suggestion>
+		</rule>
+
+		<rule id="PAPANO" name="papano to paano">
+			<pattern>
+			<token regexp="yes">\bpapano\b</token>
+			</pattern>
+			<message>Ang ibig sabihin mo ba ay 'paano'? Walang salitang '<match no="1"/>'</message>
+			<suggestion>paano</suggestion>
+		</rule>
+
+		<rule id="NARUN" name="narun to naroon">
+			<pattern>
+			<token regexp="yes">\bnarun\b</token>
+			</pattern>
+			<message>Ang ibig sabihin mo ba ay 'naroon'? Walang salitang '<match no="1"/>'</message>
+			<suggestion>naroon</suggestion>
+		</rule>
+
+		<rule id="PARUN" name="parun to paroon">
+			<pattern>
+			<token regexp="yes">\bparun\b</token>
+			</pattern>
+			<message>Ang ibig sabihin mo ba ay 'paroon'? Walang salitang '<match no="1"/>'</message>
+			<suggestion>paroon</suggestion>
+		</rule>
+
+		<rule id="NUNG" name="nung to noong">
+			<pattern>
+			<token regexp="yes">\bnung\b</token>
+			</pattern>
+			<message>Ang ibig sabihin mo ba ay 'noong'? Walang salitang '<match no="1"/>'</message>
+			<suggestion>noong</suggestion>
+		</rule>
 	</category>
 </rules>
