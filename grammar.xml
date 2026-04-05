@@ -44,12 +44,12 @@ See tagset.txt for the different POS, Lexical Categories, and corresponding attr
 			<pattern case_sensitive="no" mark_from="0">
 				<!-- Added kaba in exception because it is ambigious to the tagalog word kaba so it has to be checked with a question mark to verify -->
 				<marker>
-					<token regexp="yes">\b((pa|ka|na|mo|ko)(lang|din|rin|raw|daw|rito|dito|ko|ba))\b<exception regexp="yes">kaba</exception></token>
+					<token regexp="yes">\b([pkmn][ao]|na)(lang|ko|ba|[dr](in|aw|ito))\b<exception regexp="yes">kaba</exception></token>
 				</marker>
 			</pattern>
 
 			<message> Ang ibig sabihin mo ba ay
-				<suggestion><match no="1" case_conversion="startlower" regexp_match="(.)(a|o)(.*)" regexp_replace="$1$2 $3"/></suggestion>? Walang salitang '<match no="1"/>'.
+				<suggestion><match no="1" case_conversion="startlower" regexp_match="(..)(.*)" regexp_replace="$1 $2"/></suggestion>? Walang salitang '<match no="1"/>'.
 			</message>
 			<short>Two Words Merged into One Change</short>
 			<example correction="pa rin" type="incorrect">Nandito ka <marker>palang</marker></example>
