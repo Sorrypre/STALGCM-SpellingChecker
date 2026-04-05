@@ -25,71 +25,33 @@ $Id: grammar.xml,v 1.129 2010/11/13 23:24:21 dnaber Exp $
 			<example correction="pa rin" type="incorrect">Nandito ka <marker>palang</marker></example>
 			<example type="correct">Nandito ka <marker>pa lang</marker></example>
 		</rule>
-		
 	</category>
-	<category id="VowelReduction" name="'oo' being turned to 'o' or 'u'">
-		<rule id="GANON" name="ganon to ganoon">
-			<pattern>
-			<token regexp="yes">\bganon|ganun\b</token>
+	<category id="OON-DOUBLING" name="'on/u' to 'oon'">
+		<rule id="OON-N-DOUBLING" name="Change 'on/un' to 'oon'">
+			<pattern case_sensitive="no" mark_from="0">
+				<marker>
+					<token regexp="yes">\w*[ndg]([ou])n\b</token>
+				</marker>
 			</pattern>
-			<message>Ang ibig sabihin mo ba ay 'ganoon'? Walang salitang '<match no="1"/>'</message>
-			<suggestion>ganoon</suggestion>
-		</rule>
 
-		<rule id="DON" name="don to doon">
-			<pattern>
-			<token regexp="yes">\bdon|dun\b</token>
-			</pattern>
-			<message>Ang ibig sabihin mo ba ay 'doon'? Walang salitang '<match no="1"/>'</message>
-			<suggestion>doon</suggestion>
-		</rule>
+			<message>Ang ibig sabihin mo ba ay
+				<suggestion>
+					<match no="1" case_conversion="startlower" 
+						regexp_match="(\w*[ou])n\b" 
+						regexp_replace="$1on"/>
+				</suggestion>? Walang salitang '<match no="1"/>'.
+			</message>
 
-		<rule id="NON" name="non to noon">
-			<pattern>
-			<token regexp="yes">\bnon|nun\b</token>
-			</pattern>
-			<message>Ang ibig sabihin mo ba ay 'noon'? Walang salitang '<match no="1"/>'</message>
-			<suggestion>noon</suggestion>
-		</rule>
+			<short>'on/un' to 'oon'</short>
 
-		<rule id="NANDOON" name="andon to nandoon">
-			<pattern>
-			<token regexp="yes">\bandon|andun|nandon|nandun\b</token>
-			</pattern>
-			<message>Ang ibig sabihin mo ba ay 'nandoon'? Walang salitang '<match no="1"/>'</message>
-			<suggestion>nandoon</suggestion>
-		</rule>
+			<example correction="ganoon" type="incorrect"><marker>Ganon</marker> ka pala gumalaw</example>
+			<example type="correct"><marker>Ganoon</marker> ka pala gumalaw</example>
 
-		<rule id="PAPANO" name="papano to paano">
-			<pattern>
-			<token regexp="yes">\bpapano\b</token>
-			</pattern>
-			<message>Ang ibig sabihin mo ba ay 'paano'? Walang salitang '<match no="1"/>'</message>
-			<suggestion>paano</suggestion>
-		</rule>
+			<example correction="doon" type="incorrect">Mainit <marker>dun</marker></example>
+			<example type="correct">Mainit <marker>doon</marker></example>
 
-		<rule id="NARUN" name="narun to naroon">
-			<pattern>
-			<token regexp="yes">\bnarun\b</token>
-			</pattern>
-			<message>Ang ibig sabihin mo ba ay 'naroon'? Walang salitang '<match no="1"/>'</message>
-			<suggestion>naroon</suggestion>
-		</rule>
-
-		<rule id="PARUN" name="parun to paroon">
-			<pattern>
-			<token regexp="yes">\bparun\b</token>
-			</pattern>
-			<message>Ang ibig sabihin mo ba ay 'paroon'? Walang salitang '<match no="1"/>'</message>
-			<suggestion>paroon</suggestion>
-		</rule>
-
-		<rule id="NUNG" name="nung to noong">
-			<pattern>
-			<token regexp="yes">\bnung\b</token>
-			</pattern>
-			<message>Ang ibig sabihin mo ba ay 'noong'? Walang salitang '<match no="1"/>'</message>
-			<suggestion>noong</suggestion>
+			<example correction="noon" type="incorrect">Bata pa ako <marker>non</marker></example>
+			<example type="correct">Bata pa ako <marker>noon</marker></example>
 		</rule>
 	</category>
 	<category id="VowelCorrection" name="E to I vowel change">
