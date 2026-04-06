@@ -9,7 +9,7 @@ Copyright (C) 2011 Nathaniel Oco and Allan Borra (http://www.dlsu.edu.ph/researc
 $Id: grammar.xml,v 1.129 2010/11/13 23:24:21 dnaber Exp $
 -->
 <rules lang="tl" xsi:noNamespaceSchemaLocation="../rules.xsd" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xs="http://www.w3.org/2001/XMLSchema">
-	<category id="2WordsMerged" name="Two Words Merged into One Change">
+	<category id="MergedPanghalip" name="sepearate panghalip">
 		<rule id="PANGHALIP-PANGHALIP" name="PP P(_)P">
 			<pattern case_sensitive="no" mark_from="0">
 				<!-- Added kaba in exception because it is ambigious to the tagalog word kaba so it has to be checked with a question mark to verify -->
@@ -21,7 +21,7 @@ $Id: grammar.xml,v 1.129 2010/11/13 23:24:21 dnaber Exp $
 			<message> Ang ibig sabihin mo ba ay
 				<suggestion><match no="1" case_conversion="startlower" regexp_match="(..)(.*)" regexp_replace="$1 $2"/></suggestion>? Walang salitang '<match no="1"/>'.
 			</message>
-			<short>Two Words Merged into One Change</short>
+			<short>Merged Panghalip</short>
 			<example correction="pa rin" type="incorrect">Nandito ka <marker>palang</marker></example>
 			<example type="correct">Nandito ka <marker>pa lang</marker></example>
 		</rule>
@@ -61,7 +61,7 @@ $Id: grammar.xml,v 1.129 2010/11/13 23:24:21 dnaber Exp $
 							Based on most Filipino words, and according to the KWF Dictionary,
 							<match no="1" /> should end with "-it".
 			</message>
-			<short>Spelling Change</short>
+			<short> 'et' to 'it'</short>
 			<example correction="damit" type="incorrect">Hala! Lumilipad na mga <marker>damet</marker> natin!</example>
 			<example correction="pangit" type="incorrect">Kinuha ko ito kahit <marker>panget</marker>.</example>
 			<example correction="mabait" type="incorrect"><marker>Mabaet</marker> pa pala ang paggamit nang jumper.</example>
