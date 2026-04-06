@@ -22,7 +22,7 @@ $Id: grammar.xml,v 1.129 2010/11/13 23:24:21 dnaber Exp $
 				<suggestion><match no="1" case_conversion="startlower" regexp_match="(..)(.*)" regexp_replace="$1 $2"/></suggestion>? Walang salitang '<match no="1"/>'.
 			</message>
 			<short>Merged Panghalip</short>
-			<example correction="pa rin" type="incorrect">Nandito ka <marker>palang</marker></example>
+			<example correction="pa lang" type="incorrect">Nandito ka <marker>palang</marker></example>
 			<example type="correct">Nandito ka <marker>pa lang</marker></example>
 		</rule>
 	</category>
