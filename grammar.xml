@@ -30,7 +30,7 @@ $Id: grammar.xml,v 1.129 2010/11/13 23:24:21 dnaber Exp $
 		<rule id="OON-N-DOUBLING" name="Change 'on/un' to 'oon'">
 			<pattern case_sensitive="no" mark_from="0">
 				<marker>
-					<token regexp="yes">\w*[ndg]([ou])ng?$</token>
+					<token regexp="yes">\w*[ndg]([ou])ng?$<exception regexp="yes">bagong|tanong|bangon|ugong</exception></token>
 				</marker>
 			</pattern>
 
