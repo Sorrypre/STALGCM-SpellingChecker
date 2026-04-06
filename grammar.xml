@@ -30,26 +30,20 @@ $Id: grammar.xml,v 1.129 2010/11/13 23:24:21 dnaber Exp $
 		<rule id="OON-N-DOUBLING" name="Change 'on/un' to 'oon'">
 			<pattern case_sensitive="no" mark_from="0">
 				<marker>
-					<token regexp="yes">\w*[ndg]([ou])n\b</token>
+					<token regexp="yes">\w*[ndg]([ou])ng?$</token>
 				</marker>
 			</pattern>
 
 			<message>Ang ibig sabihin mo ba ay
-				<suggestion>
-					<match no="1" case_conversion="startlower" 
-						regexp_match="(\w*[ou])n\b" 
-						regexp_replace="$1on"/>
-				</suggestion>? Walang salitang '<match no="1"/>'.
+				<suggestion><match no="1" regexp_match="(.*)(o|u)(.*)" regexp_replace="$1oo$3"/></suggestion>
+				? Walang salitang '<match no="1"/>'.
 			</message>
 
 			<short>'on/un' to 'oon'</short>
-
 			<example correction="ganoon" type="incorrect"><marker>Ganon</marker> ka pala gumalaw</example>
 			<example type="correct"><marker>Ganoon</marker> ka pala gumalaw</example>
-
 			<example correction="doon" type="incorrect">Mainit <marker>dun</marker></example>
 			<example type="correct">Mainit <marker>doon</marker></example>
-
 			<example correction="noon" type="incorrect">Bata pa ako <marker>non</marker></example>
 			<example type="correct">Bata pa ako <marker>noon</marker></example>
 		</rule>
@@ -57,10 +51,13 @@ $Id: grammar.xml,v 1.129 2010/11/13 23:24:21 dnaber Exp $
 	<category id="VowelCorrection" name="E to I vowel change">
 		<rule id="-ET" name="ET->IT">
 			<pattern case_sensitive="no" mark_from="0">
-				<token regexp="yes">\w*([b-df-hj-np-tv-z]|[aeiou])et$</token> <!--this index=0-->
+				<marker>
+					<token regexp="yes">\w*([b-df-hj-np-tv-z]|[aeiou])et$</token> <!--this index=0-->
+				</marker>
 			</pattern>
+
 			<message> Do you mean 
-				<suggestion><match no="1" case_conversion="startlower" regexp_match="(.*)e(.)" regexp_replace="$1i$2"/></suggestion>? 
+				<suggestion><match no="1" regexp_match="(.*)e(.)" regexp_replace="$1i$2"/></suggestion>? 
 							Based on most Filipino words, and according to the KWF Dictionary,
 							<match no="1" /> should end with "-it".
 			</message>
